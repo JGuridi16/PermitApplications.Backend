@@ -26,13 +26,13 @@ namespace PermitApplications.Services.Base
 
         #region CRUD Operations
 
-        public async Task<IList<TEntityDto>> GetAllAsync()
+        public async virtual Task<IList<TEntityDto>> GetAllAsync()
         {
             var entities = await Query.ToListAsync();
             return _mapper.Map<IList<TEntityDto>>(entities);
         }
 
-        public async Task<TEntityDto> GetByIdAsync(int id)
+        public async virtual Task<TEntityDto> GetByIdAsync(int id)
         {
             TEntity entity = await Query.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -42,7 +42,7 @@ namespace PermitApplications.Services.Base
             return _mapper.Map<TEntityDto>(entity);
         }
 
-        public async Task<TEntityDto> SaveAsync(TEntityDto entityDto)
+        public async virtual Task<TEntityDto> SaveAsync(TEntityDto entityDto)
         {
             TEntity entity = _mapper.Map<TEntity>(entityDto);
 
@@ -52,7 +52,7 @@ namespace PermitApplications.Services.Base
             return _mapper.Map<TEntityDto>(entity);
         }
 
-        public async Task<TEntityDto> UpdateAsync(int id, TEntityDto entityDto)
+        public async virtual Task<TEntityDto> UpdateAsync(int id, TEntityDto entityDto)
         {
             TEntity entity = await Query.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -69,7 +69,7 @@ namespace PermitApplications.Services.Base
             return _mapper.Map(entity, entityDto);
         }
 
-        public async Task<TEntityDto> DeleteAsync(int id)
+        public async virtual Task<TEntityDto> DeleteAsync(int id)
         {
             TEntity entity = await Query.FirstOrDefaultAsync(x => x.Id == id);
 

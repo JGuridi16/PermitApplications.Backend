@@ -70,9 +70,9 @@ namespace PermitApplications.Tests.Permit
 
             var newPermits = new List<Persistence.Entities.Permit>()
             {
-                new Persistence.Entities.Permit() { EmployeeName = "Juan", EmployeeLastname = "Perez", PermitType = new Persistence.Entities.PermitType() { Description = PermitTypeStatuses.ENFERMEDAD } },
-                new Persistence.Entities.Permit() { EmployeeName = "Maria", EmployeeLastname = "Martinez", PermitType = new Persistence.Entities.PermitType() { Description = PermitTypeStatuses.DILIGENCIAS } },
-                new Persistence.Entities.Permit() { EmployeeName = "Alex", EmployeeLastname = "Carrasco", PermitType = new Persistence.Entities.PermitType() { Description = PermitTypeStatuses.DILIGENCIAS } },
+                new Persistence.Entities.Permit() { EmployeeName = "Juan", EmployeeLastname = "Perez", PermitTypeId = 0 },
+                new Persistence.Entities.Permit() { EmployeeName = "Maria", EmployeeLastname = "Martinez", PermitTypeId = 1 },
+                new Persistence.Entities.Permit() { EmployeeName = "Alex", EmployeeLastname = "Carrasco", PermitTypeId = 0 },
             };
 
             Context.Permit.AddRange(newPermits);
