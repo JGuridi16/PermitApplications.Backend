@@ -10,6 +10,9 @@ namespace PermitApplications.BusinessLayer.Mappings
         {
             CreateMap<Permit, PermitDto>().ReverseMap();
             CreateMap<PermitType, PermitTypeDto>().ReverseMap();
+            CreateMap<Permit, PermitDto>()
+                .ForMember(x => x.PermitType, y => y.MapFrom(x => x.PermitType))
+                ;
         }
     }
 }

@@ -10,7 +10,7 @@ using PermitApplications.Persistence.Contexts.Khensys;
 namespace PermitApplications.Persistance.Migrations
 {
     [DbContext(typeof(KhensysDbContext))]
-    [Migration("20220218014332_Initial")]
+    [Migration("20220218030509_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
